@@ -3,7 +3,7 @@
 #Some modules to always load when logging in
 echo "Adding R, nano and git modules to .bashrc"
 
-declare -a mods=("spack" "nano" "r/3.5.0-X11-mkl" "git")
+declare -a mods=("spack" "nano" "r/3.6.0-X11-mkl" "git")
 
 for i in "${mods[@]}"
 do
@@ -30,8 +30,8 @@ if grep -q "export CLUSTERS=serial" ~/.bashrc; then
 echo ""
 
 #Set symbolic links to the batchtools and Batchjobs config files
-ln -s /home/hpc/pr74ze/ri89coc2/lrz_configs/config_files/batchtools/.batchtools.conf.R ~/.batchtools.conf.R
-ln -s /home/hpc/pr74ze/ri89coc2/lrz_configs/config_files/BatchJobs/.BatchJobs.R ~/.BatchJobs.R
+ln -s ~/lrz_configs/config_files/batchtools/.batchtools.conf.R ~/.batchtools.conf.R
+ln -s ~/lrz_configs/config_files/BatchJobs/.BatchJobs.R ~/.BatchJobs.R
 
 
 
@@ -41,6 +41,6 @@ if  grep -q "/di25koz/lrz_configs/bin" ~/.bashrc; then
 		echo "lrz_config/bin already in PATH"
 	else
 		echo "" >> ~/.bashrc
-		echo 'export PATH=/home/hpc/pr74ze/ri89coc2/lrz_configs/bin:$PATH' >> ~/.bashrc
-		echo "added /home/hpc/pr74ze/ri89coc2/lrz_configs/bin to PATH"
+		echo 'export PATH=~/lrz_configs/bin:$PATH' >> ~/.bashrc
+		echo "added ~/lrz_configs/bin to PATH"
 	fi
