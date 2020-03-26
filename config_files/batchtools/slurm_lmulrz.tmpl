@@ -25,7 +25,7 @@ if (resources$ntasks == 1L & resources$ncpus == 1L) {
     resources$clusters = "serial"
   }
   if (is.null(resources$partition) && resources$clusters == "serial") {
-    resources$partition = "serial_mpp2"
+    resources$partition = "serial_std"
   }
   sprintf(paste0("#SBATCH --mem-per-cpu=", resources$memory))
 ## shared memory mode
